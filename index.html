@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fdfbfc">
+<title>KARTIK BHAI</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3077706725903597');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3077706725903597&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 16px;
+    overflow-x: hidden;
+    background:
+      radial-gradient(ellipse at 5% 15%, #ffdce4 0%, transparent 35%),
+      radial-gradient(ellipse at 95% 85%, #fff0c9 0%, transparent 35%),
+      linear-gradient(135deg,#eefaff,#fffafa,#f0fff9);
+}
+
+/* Floating petals */
+
+.petal {
+    position: fixed;
+    width: 15px;
+    height: 25px;
+    border-radius: 100% 0 100% 0;
+    background: linear-gradient(135deg,#ff9eae,#f4b7c7);
+    opacity: .65;
+    filter: blur(.5px);
+    animation: floatPetal 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.p1 { top: 14%; left: 42%; animation-delay: 0s; }
+.p2 { top: 28%; right: 5%; animation-delay: 2s; }
+.p3 { top: 45%; left: 6%; animation-delay: 1s; }
+.p4 { top: 60%; right: 15%; animation-delay: 3s; }
+.p5 { top: 75%; left: 12%; animation-delay: 4s; }
+.p6 { bottom: 12%; right: 8%; animation-delay: 2.5s; }
+
+@keyframes floatPetal {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-28px) rotate(35deg); }
+}
+
+/* Main Card */
+
+.main-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 760px;
+    padding: 60px 45px 55px;
+    border: 1.5px solid #9dcfc3;
+    border-radius: 58px;
+    background: rgba(255,255,255,.78);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    text-align: center;
+    box-shadow: 0 25px 80px rgba(40,90,80,.12);
+    animation: cardEntry 1s ease both;
+}
+
+@keyframes cardEntry {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Top Badge */
+
+.top-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 17px 32px;
+    border: 2px solid #a7c9c0;
+    border-radius: 50px;
+    background: linear-gradient(110deg,#ffe5ed,#f8f0f3);
+    color: #126451;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-style: italic;
+    margin-bottom: 38px;
+}
+
+.badge-dot {
+    width: 15px;
+    height: 15px;
+    background: #f04465;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #f04465;
+    animation: dotPulse 1.5s infinite;
+}
+
+@keyframes dotPulse {
+    50% { box-shadow: 0 0 22px #ff426b; }
+}
+
+/* Profile Image */
+
+.profile-wrap {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 45px;
+    padding: 9px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#ff9baa,#f04469,#ffb3c2);
+    box-shadow:
+      0 0 0 9px rgba(255,115,145,.12),
+      0 0 35px rgba(255,75,115,.35);
+    animation: profileGlow 2.5s ease-in-out infinite;
+}
+
+.profile-wrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    display: block;
+}
+
+@keyframes profileGlow {
+    0%,100% { box-shadow: 0 0 0 9px rgba(255,115,145,.12),0 0 25px rgba(255,75,115,.3); }
+    50% { box-shadow: 0 0 0 14px rgba(255,115,145,.18),0 0 45px rgba(255,75,115,.5); }
+}
+
+/* Headline */
+
+.headline {
+    font-size: clamp(36px, 7vw, 66px);
+    line-height: 1.12;
+    font-weight: 1000;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 42px;
+    text-transform: uppercase;
+}
+
+.headline span {
+    background: linear-gradient(100deg,#f36d36,#ff9b00,#101c1b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Members */
+
+.members {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #9ccfc1;
+    border-radius: 50px;
+    background: rgba(218,244,235,.65);
+    color: #11634f;
+    font-size: 23px;
+    font-weight: 900;
+    margin-bottom: 42px;
+}
+
+/* Telegram Button */
+
+.join-btn {
+    width: 100%;
+    min-height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    text-decoration: none;
+    color: #101010;
+    font-size: clamp(20px, 4vw, 35px);
+    font-weight: 1000;
+    border-radius: 38px;
+    background: linear-gradient(110deg,#f56d91,#ff4e42,#ff9d00);
+    box-shadow: 0 15px 40px rgba(255,90,85,.3);
+    transition: transform .3s, box-shadow .3s;
+    animation: buttonPulse 2.5s infinite;
+    margin-bottom: 45px;
+}
+
+.join-btn:hover {
+    transform: scale(1.025);
+    box-shadow: 0 20px 45px rgba(255,90,85,.45);
+}
+
+.join-btn:active {
+    transform: scale(.97);
+}
+
+.telegram-icon {
+    width: 42px;
+    height: 42px;
+    fill: #101010;
+    flex-shrink: 0;
+}
+
+@keyframes buttonPulse {
+    0%,100% { box-shadow: 0 15px 35px rgba(255,90,85,.25); }
+    50% { box-shadow: 0 15px 48px rgba(255,90,85,.42); }
+}
+
+/* Feature Boxes */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+    margin-bottom: 38px;
+}
+
+.feature {
+    min-height: 135px;
+    border: 2px solid #a2cfc1;
+    border-radius: 30px;
+    background: rgba(222,244,237,.55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    transition: .3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature strong {
+    font-size: clamp(18px,3vw,28px);
+    color: #ed6552;
+    font-weight: 1000;
+}
+
+.feature span {
+    font-size: 17px;
+    letter-spacing: 2px;
+    color: #587a71;
+    font-weight: 900;
+}
+
+/* Bottom Text */
+
+.bottom-line {
+    height: 2px;
+    width: 100%;
+    background: #a6cec0;
+    margin-bottom: 40px;
+}
+
+.footer-text {
+    font-size: 20px;
+    color: #607e76;
+    line-height: 1.5;
+}
+
+/* Made By */
+
+.made-by {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 5;
+    padding: 12px 23px;
+    border-radius: 50px;
+    background: rgba(45,45,45,.78);
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    box-shadow: 0 5px 20px rgba(0,0,0,.18);
+    backdrop-filter: blur(8px);
+}
+
+.made-by span {
+    color: #ffb1c0;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:600px) {
+    body {
+        padding: 35px 16px;
+    }
+
+    .main-card {
+        padding: 35px 20px 32px;
+        border-radius: 42px;
+    }
+
+    .top-badge {
+        padding: 13px 18px;
+        font-size: 13px;
+        letter-spacing: 2px;
+        gap: 10px;
+        margin-bottom: 32px;
+    }
+
+    .badge-dot {
+        width: 11px;
+        height: 11px;
+    }
+
+    .profile-wrap {
+        width: 175px;
+        height: 175px;
+        padding: 7px;
+        margin-bottom: 35px;
+    }
+
+    .profile-wrap img {
+        border-width: 5px;
+    }
+
+    .headline {
+        font-size: clamp(34px,9vw,48px);
+        letter-spacing: -1.5px;
+        margin-bottom: 35px;
+    }
+
+    .members {
+        font-size: 19px;
+        padding: 13px 25px;
+        margin-bottom: 38px;
+    }
+
+    .join-btn {
+        min-height: 95px;
+        border-radius: 29px;
+        gap: 15px;
+        font-size: clamp(17px,4.5vw,25px);
+        margin-bottom: 35px;
+    }
+
+    .telegram-icon {
+        width: 33px;
+        height: 33px;
+    }
+
+    .features {
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .feature {
+        min-height: 105px;
+        border-radius: 24px;
+        gap: 12px;
+    }
+
+    .feature strong {
+        font-size: 16px;
+    }
+
+    .feature span {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .bottom-line {
+        margin-bottom: 30px;
+    }
+
+    .footer-text {
+        font-size: 15px;
+    }
+
+    .made-by {
+        bottom: 12px;
+        right: 12px;
+        padding: 10px 17px;
+        font-size: 14px;
+    }
+}
+
+@media(max-width:360px) {
+    .main-card {
+        padding: 30px 14px;
+    }
+
+    .top-badge {
+        font-size: 11px;
+        padding: 12px;
+    }
+
+    .features {
+        gap: 7px;
+    }
+
+    .feature strong {
+        font-size: 14px;
+    }
+
+    .feature span {
+        font-size: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Petals -->
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+<div class="petal p5"></div>
+<div class="petal p6"></div>
+
+<!-- Main Landing Page -->
+
+<main class="main-card">
+
+    <div class="top-badge">
+        <span class="badge-dot"></span>
+        KARTIK BHAI
+    </div>
+
+    <div class="profile-wrap">
+        <img
+          src="https://www.image2url.com/r2/default/images/1795499354969-e402aa07-aafd-4179-adad-8201c54e7c0a.png"
+          alt="Kartik Bhai Profile"
+        >
+    </div>
+
+    <h1 class="headline">
+        <span>KARTIK BHAI</span>
+    </h1>
+
+    <div class="members">
+        7.5K Members
+    </div>
+
+    <a
+      href="https://t.me/+sRvT4Jo-p602M2I1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="join-btn"
+    >
+        <svg class="telegram-icon" viewBox="0 0 24 24">
+            <path d="M21.8 3.1L18.5 20c-.25 1.2-.95 1.5-1.95.95l-5.4-4-2.6 2.5c-.3.3-.55.55-1.1.55l.4-5.5L17.9 6.3c.4-.35-.1-.55-.6-.2L5.6 13.5.4 11.9c-1.15-.35-1.15-1.15.25-1.7L20.8 2.3c.95-.35 1.8.2 1 0.8z"/>
+        </svg>
+
+        JOIN TELEGRAM CHANNEL
+    </a>
+
+    <div class="features">
+
+        <div class="feature">
+            <strong>VERIFIED</strong>
+            <span>CLICKS</span>
+        </div>
+
+        <div class="feature">
+            <strong>INSTANT</strong>
+            <span>ACCESS</span>
+        </div>
+
+        <div class="feature">
+            <strong>ZERO</strong>
+            <span>SPAM</span>
+        </div>
+
+    </div>
+
+    <div class="bottom-line"></div>
+
+    <p class="footer-text">
+        Opens Telegram • Tap the button to send your join request
+    </p>
+
+</main>
+
+<!-- Made By Radhe -->
+
+<div class="made-by">
+    <span>◆</span> Made By RADHE
+</div>
+
+</body>
+</html>
